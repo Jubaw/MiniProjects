@@ -2,7 +2,7 @@ package carinsurance;
 
 import java.util.Scanner;
 
-public class Arac {
+public class Car {
     /*
           Tarife dönemi: Aralık 2024, Haziran 2024
           1.Dönem: Haziran 2024                 2.Dönem Aralık 2024

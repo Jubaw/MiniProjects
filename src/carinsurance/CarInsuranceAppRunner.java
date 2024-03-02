@@ -47,7 +47,7 @@ Proje: Araç Sigorta Prim Hesaplama
             //Tarife dönemi doğru girilirse işleme devam etsin.
             if (donem == 1 || donem == 2){
                 //4- bir araç objesi oluşturalım
-                Arac arac = new Arac();//default
+                Car arac = new Car();//default
                 System.out.println("Araç tipini seçiniz");
                 System.out.println("otomobil,kamyon,motosiklet,otobüs");
                 arac.type = input.next().toLowerCase();
