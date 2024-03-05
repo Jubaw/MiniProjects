@@ -1,4 +1,4 @@
-package carinsurance;
+package carinsuranceapp;
 
 import java.util.Scanner;
 

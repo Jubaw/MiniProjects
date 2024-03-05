@@ -22,12 +22,12 @@ public class UserService {
         do {
             System.out.println("Lütfen email giriniz");
             email = scanner.nextLine();
-            isValid = validateEmail(email);
+
             if (emails.contains(email)) {
                 System.out.println("Bu email zaten kayıtlı.Başka bir email deneyin.");
                 isValid = false;
             } else {
-                isValid = true;
+                isValid = validateEmail(email);
             }
         } while (!isValid);
 
@@ -112,6 +112,8 @@ public class UserService {
     private boolean validateEmail(String email) {
         boolean space = email.contains(" ");
         boolean containsAt = email.contains("@");
+        int key = 0;
+
         if (space) {
             System.out.println("Email boşluk içeremez.");
             return false;
@@ -136,8 +138,10 @@ public class UserService {
                 System.out.println("Emailde; Gmail, Hotmail ya da Yahoo dışında alan adı kullanılamaz.");
                 return false;
             }
+            key = 1;
             return true;
         }
+
     }
 }
 

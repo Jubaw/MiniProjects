@@ -1,4 +1,4 @@
-package ticketreservation;
+package ticketreservationapp;
 import java.util.Scanner;
 public class TicketReservationAppRunner {
 

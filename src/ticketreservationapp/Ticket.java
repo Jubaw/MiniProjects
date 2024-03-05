@@ -1,4 +1,4 @@
-package ticketreservation;
+package ticketreservationapp;
 
 public class Ticket {
 
