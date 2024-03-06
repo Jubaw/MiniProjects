@@ -2,7 +2,7 @@ package alghorithms;
 
 public class StringPermutation {
     public static void main(String[] args) {
-        permute("abc");
+        permute("abcasdasd");
 
     }
 
