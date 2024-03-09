@@ -44,7 +44,6 @@ public class Student {
 
         studentYear();
         setStudentId();
-        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentId);
 /*      System.out.println("1 - Freshmen\n2 - Sophomore\n3 - Junior\n4 - Senior\n Enter students' class level");
         this.gradeYear = scanner.nextInt();
         System.out.println(firstName + " " + lastName + " " + gradeYear);*/
@@ -120,6 +119,7 @@ public class Student {
         this.studentId = gradeYear + "" + id;
     }
 
+    //Enroll class - pay tuition
     public void enroll() {
         System.out.println("-------------");
         // Initialize variables to hold courses and tuition balance
@@ -136,32 +136,39 @@ public class Student {
                 break;
             }
             // Add the course and its cost to the enrolled courses and update the tuition balance
-            courses += course + "\n";
+            courses += "\n " + course;
             tuitionBalance += COST_OF_COURSE;
         }
         // Print out the enrolled courses and tuition balance
-        System.out.print("Enrolled in:\n" + courses);
         System.out.println("Remaining tuition amount: $" + tuitionBalance);
     }
 
 
     //View balance
-    public void viewBalance(){
+    public void viewBalance() {
         System.out.println("-------------");
         System.out.println("Your balance is: $" + tuitionBalance);
     }
-    public void payTuition(){
-        System.out.println("-------------");
+
+    public void payTuition() {
         viewBalance();
         System.out.println("Enter your payment");
         int payment = scanner.nextInt();
         tuitionBalance = tuitionBalance - payment;
         System.out.println("Thank you for your payment of $" + payment);
-        viewBalance();
-    }
-    //Pay tuition
-    //Show status
 
+
+    }
+
+
+    //Show status
+    public String showInfo() {
+        return "Name: " + firstName + " " + lastName +
+                "\nGrade Level: " + gradeYear +
+                "\nStudent ID:" + studentId +
+                "\nCourses enrolled: " + courses +
+                "\nBalance $: " + tuitionBalance;
+    }
     //Enroll in courses
     /*public void enroll() {
         //Get inside of loop, user hits 0 -> quit loop
