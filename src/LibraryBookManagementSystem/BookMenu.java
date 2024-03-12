@@ -12,47 +12,37 @@ public class BookMenu {
     Database database = new Database();
 
 
-
-
-
-    public void startMenu(){
-        String exit;
+    public void startMenu() {
+        String menuSelection;
         do {
-            System.out.println("Welcome to the library,please select from the menu. " +
-                    "\n1.Find book by author name " +
-                    "\n2.Find author by book name" +
-                    "\n3.Find book by genre\n4.Exit") ;
-            int input = scanner.nextInt();
-            scanner.nextLine();
-            switch (input){
-                case 1:
+            System.out.println("""
+                    Welcome to the library,please select from the menu.\s
+                    1.Find book by author name\s
+                    2.Find author by book name
+                    3.Find book by genre
+                    4.Exit""");
+            menuSelection = scanner.nextLine();
+            switch (menuSelection) {
+                case "1":
                     findBookByAuthor();
                     break;
-
-                case 2:
+                case "2":
                     findAuthorByBook();
                     break;
-                case 3:
+                case "3":
                     findBookByGenre();
                     break;
-                case 4:
-                    break;
+                case "4":
+                    exit();
+                    return;
+                default:
+                    System.out.println("Invalid selection, choose from 1 to 4");
 
             }
 
-            System.out.println("Y for Menu,N for exit ? Y/N");
-            exit = scanner.nextLine();
-            if (exit.equalsIgnoreCase("N")){
-                break;
-            }else if(exit.equalsIgnoreCase("N")){
-                continue;
-            }
-        }while (exit.equalsIgnoreCase("Y"));
+
+        } while (!menuSelection.equalsIgnoreCase("4"));
     }
-
-
-
-
 
 
     public void findBookByAuthor() {
@@ -77,9 +67,7 @@ public class BookMenu {
                 if (!input.equalsIgnoreCase("Y") && !input.equalsIgnoreCase("N")) {
                     System.out.println("Invalid input. Please enter 'Y' for yes or 'N' for no.");
                 }
-
             } while (!input.equalsIgnoreCase("Y") && !input.equalsIgnoreCase("N"));
-
         } while (input.equalsIgnoreCase("Y"));
     }
 
@@ -108,8 +96,6 @@ public class BookMenu {
 
 
         } while (input.equalsIgnoreCase("Y"));
-
-
     }
 
     public void findBookByGenre() {
@@ -126,7 +112,7 @@ public class BookMenu {
                 }
             }
             if (!isFound) {
-                System.out.println("Could not find book according: " +genreInput);
+                System.out.println("Could not find book according: " + genreInput);
             }
 
             do {
@@ -137,5 +123,11 @@ public class BookMenu {
                 }
             } while (!input.equalsIgnoreCase("Y") && !input.equalsIgnoreCase("N"));
         } while (input.equalsIgnoreCase("Y"));
+    }
+
+
+    public static void exit() {
+        System.out.println("Exiting program...");
+        System.exit(0);
     }
 }
