@@ -6,6 +6,13 @@ import java.util.*;
 public class Database {
     private List<Books> booksList = new ArrayList<>();
 
+    public void addBook(Books book) {
+        booksList.add(book);
+    }
+
+    public List<Books> getBooksList() {
+        return booksList;
+    }
     public Database() {
         booksList.add(new Books("Crime and Punishment", "Fyodor Dostoyevsky", 1000, "Philosophical Fiction"));
         booksList.add(new Books("Les Miserables", "Victor Hugo", 1500, "Historical Fiction"));
@@ -16,11 +23,15 @@ public class Database {
         // Add other books similarly
     }
 
-    public List<Books> getBooksList() {
-        return booksList;
+    @Override
+    public String toString() {
+        return "Database{" +
+                "booksList=" + booksList +
+                '}';
     }
 
-   /* HashMap<String,String> bookNameAndAuthor = new HashMap<>();
+
+/* HashMap<String,String> bookNameAndAuthor = new HashMap<>();
 
     {
         bookNameAndAuthor.put("Crime and Punishment","Fyodor Dostoyevski");
