@@ -9,6 +9,9 @@ public class Database {
     public void addBook(Books book) {
         booksList.add(book);
     }
+    public void removeBook(Books book ){
+        booksList.remove(book);
+    }
 
     public List<Books> getBooksList() {
         return booksList;
@@ -21,6 +24,7 @@ public class Database {
         booksList.add(new Books("Hamlet", "William Shakespeare", 1500, "Drama"));
         booksList.add(new Books("Bir İdam Mahkumunun Son Günü", "Victor Hugo", 1100, "Roman"));
         // Add other books similarly
+
     }
 
     @Override
@@ -31,25 +35,7 @@ public class Database {
     }
 
 
-/* HashMap<String,String> bookNameAndAuthor = new HashMap<>();
 
-    {
-        bookNameAndAuthor.put("Crime and Punishment","Fyodor Dostoyevski");
-        bookNameAndAuthor.put("Les Miserables","Victor Hugo");
-        bookNameAndAuthor.put("Bir idam mahkumunun son günü","Victor Hugo");
-        bookNameAndAuthor.put("1984","George Orwell");
-        bookNameAndAuthor.put("Frankeinstein","Mary Shelley");
-        bookNameAndAuthor.put("Hamlet","William Shakespeare");
-    }
-
-   int[] bookPrices = new int[5];
-    {
-        bookPrices[0] = 1000;
-        bookPrices[1] = 1500;
-        bookPrices[2] = 850;
-        bookPrices[3] = 500;
-        bookPrices[4] = 2000;
-    }*/
 
 
 
