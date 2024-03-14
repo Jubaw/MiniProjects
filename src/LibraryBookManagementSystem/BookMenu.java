@@ -5,11 +5,13 @@ import java.awt.print.Book;
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class BookMenu {
     static Scanner scanner = new Scanner(System.in);
 
+    User user = new User();
 
     Books books = new Books();
     Database database = new Database();
@@ -172,20 +174,65 @@ public class BookMenu {
 
 
     public void listBooks(){
+        int column = 1;
         List<Books> books = database.getBooksList();
         if (books.isEmpty()){
             System.out.println("There are no books in library");
         }else{
             for (Books book : database.getBooksList()){
                 System.out.println("======================");
-                System.out.println("Book Name: " + book.getBookName() +
+                System.out.println( column + "\nBook Name: " + book.getBookName() +
                         "\nAuthor: " + book.getBookAuthor() +
                         "\nPrice: $" + book.getBookPrice() +
                         "\nGenre: " + book.getBookGenre());
+                column++;
             }
             System.out.println("======================");
         }
 
+    }
+
+    public void borrowBook(){
+        do {
+            System.out.println("Enter your name");
+            String name = scanner.nextLine();
+            user.setName(name);
+
+            System.out.println("Enter your surname");
+            String surName = scanner.nextLine();
+            user.setSurname(surName);
+
+            int userId =  user.setUserId(randomIdGenerator());
+            System.out.println("Your ID is " + userId );
+
+            System.out.println("Enter E-Mail");
+            String email = scanner.nextLine();
+            user.setEmail(email);
+
+            System.out.println("Enter phone number");
+            String phoneNumber = scanner.nextLine();
+
+            listBooks();
+            System.out.println("Enter the number of the book you want to borrow");
+            int bookNumber = scanner.nextInt();
+            switch (bookNumber){
+                case 1:
+
+
+            }
+
+
+
+
+
+        }while(true);
+    }
+
+
+
+    public int  randomIdGenerator(){
+        Random random = new Random();
+        return random.nextInt(1000) + (99000);
     }
 
 
