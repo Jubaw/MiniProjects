@@ -1,4 +1,4 @@
-package LibraryBookManagementSystem;
+package libraryapp;
 
 public class Books {
     private String bookName;

@@ -1,6 +1,4 @@
-package LibraryBookManagementSystem;
-
-import javax.swing.*;
+package libraryapp;
 
 public class LibraryRunner {
     public static void main(String[] args) {

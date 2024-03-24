@@ -1,9 +1,5 @@
-package LibraryBookManagementSystem;
+package libraryapp;
 
-import javax.xml.crypto.Data;
-import java.awt.print.Book;
-import java.sql.SQLOutput;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
