@@ -23,7 +23,6 @@ public class Database {
         booksList.add(new Books("Hamlet", "William Shakespeare", 1500, "Drama"));
         booksList.add(new Books("Bir İdam Mahkumunun Son Günü", "Victor Hugo", 1100, "Roman"));
         // Add other books similarly
-
     }
 
     @Override
